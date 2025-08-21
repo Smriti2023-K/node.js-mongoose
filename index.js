@@ -92,23 +92,108 @@
 
 
 
-const express = require('express');
-const ProductN = require('./product-new'); // ✅ only once
-require('./config');
+// const express = require('express');
+// const ProductN = require('./product-new'); // ✅ only once
+// require('./config');
 
-const app = express();
-app.use(express.json()); // so we can send JSON in POST requests
+// const app = express();
+// app.use(express.json()); // so we can send JSON in POST requests
 
-app.post('/create', async (req, res) => {
-  try {
-    const data = new ProductN(req.body);  // create new product from request
-    let result = await data.save();      // save in MongoDB
-    res.send(result);
-  } catch (err) {
-    res.status(500).send(err);
-  }
-});
+// app.post('/create', async (req, res) => {
+//   try {
+//     const data = new ProductN(req.body);  // create new product from request
+//     let result = await data.save();      // save in MongoDB
+//     res.send(result);
+//   } catch (err) {
+//     res.status(500).send(err);
+//   }
+// });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+// app.listen(5000, () => {
+//   console.log("Server running on port 5000");
+// });
+
+///get api with mongoose////////
+
+// const express = require ('express');
+// require('./config');
+
+// const ProductN = require ('./product-new');
+
+// const app = express();
+// app.use (express.json());
+
+
+// app.get ("/list" , async (req,res) =>{
+// let data = await ProductN.find();
+// res.send(data);
+// })
+
+// app.listen(5000);
+
+
+////delete api with mongoose////
+
+// const express = require ('express');
+// require ('./config');
+// const ProductNew = require ('./product-new');
+
+// const app = express();
+
+// app.use (express.json());
+
+// app.delete('/delete/:_id',async (req,res) =>{
+// console.log(req.params);
+// let data = await ProductNew.deleteOne(req.params);
+// res.send("done");
+// })
+
+// app.listen(5000);
+
+////update api with mongoose/////
+
+
+// const express = require ('express');
+// require('./config');
+// const ProductNew = require ('./product-new');
+
+// const app = express();
+
+// app.use (express.json());
+
+// app.put('/update/:_id' , async (req,res)=>{
+//     console.log(req.params);
+//     let data = await ProductNew.updateOne
+//     (req.params , {
+//         $set:req.body 
+//     })
+// res.send(data);
+// })
+
+// app.listen(5000);
+
+
+/// search api in node.js /////
+
+const express = require ('express');
+require ('./config');
+
+const Product = require ('./product-new');
+
+// const app = express ();
+
+// app.use (express.json());
+
+// app.get('/search/:key', async (req,res) =>{
+//     console.log(req.params.key)
+//     let data = await Product.find(
+//         {
+//             "$or" :[
+//                 {"name":{ $regex: req.params.key}},
+//                 {"brand":{ $regex: req.params.key}}
+//             ]
+//         }
+//     )
+// })
+
+// app.listen(5000);
