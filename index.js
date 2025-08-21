@@ -175,14 +175,14 @@
 
 /// search api in node.js /////
 
-const express = require ('express');
-require ('./config');
+// const express = require ('express');
+// require ('./config');
 
-const Product = require ('./product-new');
+// const Product = require ('./product-new');
 
-// const app = express ();
+// const app = express();
 
-// app.use (express.json());
+// app.use(express.json());
 
 // app.get('/search/:key', async (req,res) =>{
 //     console.log(req.params.key)
@@ -194,6 +194,44 @@ const Product = require ('./product-new');
 //             ]
 //         }
 //     )
+//     res.send(data);
 // })
 
 // app.listen(5000);
+
+
+//upload file in node.js/////
+
+// const express = require ('express');
+
+// const multer = require ('multer');
+
+// const app = express();
+
+// const upload = multer({
+//     storage:multer.diskStorage({
+//         destination :function (req,file,cb){
+//             cb(null,"uploads")
+//         },
+//         filename :function (req,file,cb){
+//             cb(null,file.filename+"-"+Date.now()+".jpg")
+//         },
+
+//     })
+// }) .single('user-file');
+
+// app.post('/upload' , (req,res) =>{
+// res.send("file upload");
+// });
+
+// app.listen(5000);
+
+//os information we are getting///
+
+// const os = require ('os');
+// console.log(os);  // os info
+// console.log(os.arch()); /// show x64
+// console.log(os.freemem() /(1024*1024*1024));  // show memory
+// console.log(os.hostname());
+// console.log(os.platform());
+// console.log(os.userInfo());
