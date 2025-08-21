@@ -235,3 +235,35 @@
 // console.log(os.hostname());
 // console.log(os.platform());
 // console.log(os.userInfo());
+
+///// event and event emitter////
+
+
+// const express = require ('express');
+// const EventEmitter = require ('events');
+// const app = express();
+// const event = new EventEmitter();
+
+// let count = 0 
+// event.on('count API', () =>{
+//     count++;
+//     console.log('event called' , count)
+// })
+
+// event.on('countAPI' , () =>{
+//     console.log('event called')
+// })
+
+// app.get('/' , (req,res) =>{
+//     res.send('api called');
+//     event.emit('countAPI');
+// });
+
+// app.get('/search', (req,res) =>{
+//     res.send('Search api called')
+//     event.emit('count API');
+// })
+
+// app.listen(5000);
+
+
